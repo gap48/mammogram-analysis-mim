@@ -10,9 +10,6 @@ This work introduces a novel dual-stage deep learning framework for mammography 
 - **Improved Transferability**: MIM-pre-trained encoder provides a robust foundation for adapting to various tasks and modalities
 - **Efficient Label Usage**: Context-aware features enable strong performance even with limited labeled data
 
-## Directory Structure and Setup
-
-See the full documentation for details on required directory structure and setup instructions.
 
 ## Running the Code
 
