@@ -1,5 +1,4 @@
-# mammogram-analysis-mim
-Self-Supervised Mammogram Analysis through Masked Image Modeling: A Dual-Stage Framework for Interpretable and Label-Efficient Cancer Diagnosis
+# Self-Supervised Mammogram Analysis through Masked Image Modeling: A Dual-Stage Framework for Interpretable and Label-Efficient Cancer Diagnosis
 
 This work introduces a novel dual-stage deep learning framework for mammography analysis, integrating self-supervised pre-training (Masked Image Modeling) with semi-supervised classification. The approach targets key challenges including: limited labeled data, annotation scarcity, high annotation costs, potential labeling errors, limited transferability, and the need for model explainability in medical imaging.
 
