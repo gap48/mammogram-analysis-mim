@@ -1,14 +1,28 @@
 # Self-Supervised Mammogram Analysis through Masked Image Modeling: A Dual-Stage Framework for Interpretable and Label-Efficient Cancer Diagnosis
 
-This work introduces a novel dual-stage deep learning framework for mammography analysis, integrating self-supervised pre-training (Masked Image Modeling) with semi-supervised classification. The approach targets key challenges including: limited labeled data, annotation scarcity, high annotation costs, potential labeling errors, limited transferability, and the need for model explainability in medical imaging.
+This work introduces a novel dual-stage deep learning framework for mammography analysis that integrates self-supervised pre-training via Masked Image Modeling (MIM) with semi-supervised classification. The approach addresses critical challenges in medical imaging analysis: limited labeled data, annotation scarcity, high annotation costs, potential labeling errors, limited transferability, and the need for model explainability.
 
-### Key Benefits
+## Technical Architecture
 
-- **Reduced Annotation Requirements**: Leverages self-supervised pre-training to utilize unlabeled mammogram archives
-- **Enhanced Clinical Decision Support**: Provides rich feature representations with transparent explanations via attention maps and Grad-CAM visualizations
-- **Improved Transferability**: MIM-pre-trained encoder provides a robust foundation for adapting to various tasks and modalities
-- **Efficient Label Usage**: Context-aware features enable strong performance even with limited labeled data
+### Self-Supervised Pre-Training Stage
+- **Random Blockwise Masking**: Implements a 16×16 patch-based masking strategy with a 0.5 ratio, maintaining local structural information crucial for preserving anatomical patterns in mammograms
+- **Swin Transformer Encoder**: Employs a hierarchical vision transformer with shifted window-based self-attention that captures both local tissue details and global contextual relationships across multiple scales
+- **Lightweight Convolutional Decoder**: Features progressive upsampling (1024→512→256→128→64 channels) and L1 pixel-wise reconstruction loss optimization specifically chosen over MSE for superior preservation of fine-grained mammographic details (microcalcifications, spiculated masses, architectural distortions)
 
+### Semi-Supervised Classification Stage
+- **Multi-Task Classification Head**: Built on the pre-trained encoder with class-weighted cross-entropy loss (wc = N/2Nc) to effectively handle the inherent class imbalance typical in pathology datasets
+- **Explainability Mechanisms**: Implements dual visualization approaches:
+  1. Attention map extraction from the final layer's multi-head self-attention module
+  2. Gradient-weighted class activation mapping (Grad-CAM) adapted specifically for transformer architectures with gradient-based weighting of attention heads
+
+## Key Technical Benefits
+
+- **Reduced Annotation Requirements**: Leverages unsupervised pre-training on unlabeled mammography data, effectively learning salient imaging biomarkers without expert annotations through reconstruction-based learning objectives
+- **Enhanced Clinical Decision Support**: Combines high classification performance with clinically relevant visual explanations that align with radiological assessment patterns, enabling verification of model reasoning and improving clinician trust
+- **Architectural Transferability**: The hierarchical multi-scale representation learning framework transfers effectively across varying imaging protocols (digital mammography, tomosynthesis) and downstream tasks (density assessment, lesion detection, risk prediction)
+- **Label Efficiency**: Achieves strong performance with as little as 10-50% of labeled data through the context-rich feature representations encoded in the Swin Transformer backbone, enabling pathology-verified labeling to be used economically
+
+This approach demonstrates how self-supervised learning can be effectively adapted to the unique challenges of mammography analysis, where both pixel-level detail and global context are critical for accurate diagnosis.
 
 ## Running the Code
 
