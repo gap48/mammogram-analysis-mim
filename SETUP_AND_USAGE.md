@@ -6,9 +6,9 @@
 Before running the code, ensure the following directory structure:
 
 project_root/
-├── mammogram_analysis.py ....................... Main script
+├── mammogram_analysis.py                     # Main script
 ├── manifest-ZkhPvrLo5216730872708713142/
-│   └── CBIS-DDSM/ ............................. Dataset directory
+│   └── CBIS-DDSM/                           # Dataset directory
 │       ├── mass_case_description_train_set.csv
 │       ├── mass_case_description_test_set.csv
 │       ├── calc_case_description_train_set.csv
@@ -17,12 +17,12 @@ project_root/
 │           ├── Mass-Training_P_00001_LEFT_CC/
 │           ├── Mass-Training_P_00001_LEFT_MLO/
 │           └── ...
-├── dcm_files.txt ............................... Optional: List of DICOM paths
-└── outputs/ .................................... Created automatically
-├── checkpoints/
-├── plots/
-├── visualizations/
-└── training_log.txt
+├── dcm_files.txt                             # Optional: List of DICOM paths
+└── outputs/                                  # Created automatically
+    ├── checkpoints/
+    ├── plots/
+    ├── visualizations/
+    └── training_log.txt
 
 ## Training Modes
 
