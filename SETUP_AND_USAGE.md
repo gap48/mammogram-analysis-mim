@@ -56,3 +56,22 @@ python mammogram_analysis.py \
     --visualize \
     --log_mode console
 ```
+
+## Output Structure
+The code generates the following outputs in the specified output_dir:
+```markdown
+outputs/
+├── checkpoints/
+│   ├── best_checkpoint.pth                   # Best MIM model
+│   ├── last_checkpoint.pth                   # Latest MIM model
+│   ├── best_checkpoint_swin_mim_classifier.pth # Best classifier
+│   └── last_checkpoint_swin_mim_classifier.pth # Latest classifier
+├── plots/
+│   ├── mim_loss_curve.png                    # MIM training curves
+│   ├── classification_loss_curve.png         # Classification loss
+│   └── classification_accuracy_curve.png     # Classification accuracy
+├── visualizations/
+│   ├── attention_map.png                     # Attention visualization
+│   └── gradcam_map.png                       # Grad-CAM visualization
+└── training_log.txt                          # Training logs (if log_mode=file)
+```
