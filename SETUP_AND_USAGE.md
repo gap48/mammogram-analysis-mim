@@ -1,4 +1,4 @@
-```markdown
+
 # Setup and Usage Instructions
 
 ## Required Directory Structure
