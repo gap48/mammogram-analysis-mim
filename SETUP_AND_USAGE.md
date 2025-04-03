@@ -4,7 +4,7 @@
 ## Required Directory Structure
 
 Before running the code, ensure the following directory structure:
-
+```markdown
 project_root/
 ├── mammogram_analysis.py                     # Main script
 ├── manifest-ZkhPvrLo5216730872708713142/
@@ -23,7 +23,7 @@ project_root/
     ├── plots/
     ├── visualizations/
     └── training_log.txt
-
+```
 ## Training Modes
 
 ### MIM Pre-training Only
