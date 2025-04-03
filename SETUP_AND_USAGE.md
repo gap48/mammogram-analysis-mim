@@ -35,7 +35,7 @@ python mammogram_analysis.py \
     --mim_epochs 3 \
     --train_mim \
     --log_mode file
-
+```
 ### Classification Training Only
 ```bash
 python mammogram_analysis.py \
@@ -46,7 +46,7 @@ python mammogram_analysis.py \
     --train_cls \
     --missing_label_percentage 50 \
     --log_mode console
-
+```
 ### Visualization Only
 ```bash
 python mammogram_analysis.py \
@@ -55,3 +55,4 @@ python mammogram_analysis.py \
     --output_dir ./outputs \
     --visualize \
     --log_mode console
+```
